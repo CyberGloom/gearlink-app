@@ -20,8 +20,7 @@
           program = "${self.packages.${pkgs.system}.default}/bin/gearlink";
         };
       });
-
-      # Optional: Provide a NixOS module that automatically adds the package AND the udev rules!
+      
       nixosModules.default = { pkgs, ... }: {
         environment.systemPackages = [ self.packages.${pkgs.system}.default ];
         services.udev.extraRules = ''
