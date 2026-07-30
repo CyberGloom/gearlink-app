@@ -21,6 +21,8 @@
         };
       });
       
+      # This part is optional and changes global settings to add the package and udev rules
+      
       nixosModules.default = { pkgs, ... }: {
         environment.systemPackages = [ self.packages.${pkgs.system}.default ];
         services.udev.extraRules = ''
